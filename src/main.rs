@@ -6,7 +6,7 @@ use portaudio::pa;
 use std::error::Error;
 
 const SAMPLE_RATE: f64 = 44_100.0;
-const FRAMES: usize = 128;
+const FRAMES: usize = 1024;
 
 fn init() -> pa::Stream<f32, f32>{
     match pa::initialize() {
@@ -71,7 +71,7 @@ fn buzz(stream: &pa::Stream<f32, f32>, buffer: &[f32]){
         'waiting_for_stream: loop {
             match stream.get_stream_write_available() {
                 Ok(None) => {
-                    println!("Not yet.");
+                    //println!("Not yet.");
                 },
                 Ok(Some(frames)) => {
                     println!("Write stream available with {} frames.", frames);
