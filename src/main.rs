@@ -6,7 +6,7 @@ use portaudio::pa;
 use std::error::Error;
 
 const SAMPLE_RATE: f64 = 44_100.0;
-const FRAMES: usize = 1024;
+const FRAMES: usize = 128;
 
 fn init() -> pa::Stream<f32, f32>{
     match pa::initialize() {
@@ -101,7 +101,7 @@ fn main() {
     let buffer : &mut [f32] = &mut [0.0; FRAMES][..];
     
     for val in buffer.iter_mut() {
-        *val = 0.001;
+        *val = 0.00;
     }
     println!("({:?}, {:?})", buffer, FRAMES);
 
