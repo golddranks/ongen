@@ -1,0 +1,20 @@
+[root]
+name = "ongen"
+version = "0.0.1"
+dependencies = [
+ "portaudio 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "pkg-config"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "portaudio"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "pkg-config 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
